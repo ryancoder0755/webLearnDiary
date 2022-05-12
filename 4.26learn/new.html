@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="as">
+  <meta name="description" content="as">
+  <meta name="author" content="as">
+  <title>提交特效</title>
+</head>
+<body>
+    <form>
+        <label>用户名</label>
+        <input type="username"></input>
+        <label>密码</label>
+        <input type="password"></input>
+        <input type="checkbox" id="rememberMe"></input>
+        <label for="rememberMe">记住我</label>
+        <input type="submit" value="登录">
+    </form>
+    <script>
+        const username = document.querySelector('input[type="username"]');
+       const checkbox = document.querySelector('input[type="checkbox"]');
+       const submit = document.querySelector('input[type="submit"]');
+    
+       submit.addEventListener('click', e =>{
+           if(checkbox.checked && username.value !=''){
+               console.log('111')
+               let key = 'username';
+               let value = encodeURIComponent(username.value);
+               let twoDays = 2*24*60*60;
+    
+               document.cookie = `${key}=${value};max-age=${twoDays}`;
+           }
+           e.preventDefault(); 
+       })
+    </script>
+</body>
+</html>

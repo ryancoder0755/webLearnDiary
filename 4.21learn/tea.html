@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta charset="utf-8">
+<title>遮罩层</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,IE=IE8,chrome=1">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" href="${ctxPath}/static/layuiadmin/layui/css/layui.css" media="all">
+<link rel="stylesheet" href="${ctxPath}/static/layuiadmin/style/admin.css" media="all">
+<head>
+    <title>透明遮罩层</title>
+    <style type="text/css">
+        .zhezh{
+            position: absolute;
+            background-color: black;
+            z-index: 99999;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        body
+        {
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="ZZ">
+	<input id="Zhow" type="button" value="显示遮罩"  onclick="showCSS();"/>
+	<input type="button" value="点击事件1" onclick="alert(1)">
+	<input type="button" value="点击事件2" onclick="alert(2)">
+	<input type="button" value="点击事件3" onclick="alert(3)">
+</div>
+</body>
+</html>
+<script language="javascript" type="text/javascript">
+    let zz = document.querySelector('#ZZ')
+    
+    function showCSS() {
+        console.log(zz);
+         zz.classList.add("zhezh");
+        setTimeout(function(){
+        zz.classList.remove("zhezh");
+        },5000);
+    }
+</script>

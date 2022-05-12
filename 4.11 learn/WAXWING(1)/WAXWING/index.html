@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> -->
+    <meta name="viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0>
+    <title>WAXWING</title>
+    <link rel="shortcut icon" href="img/icon/favicon.jpg" type="image/x-icon">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <div class="nav-fat">
+            <div class="nav">
+                <ul class="nav-option">
+                    <li class="index">首页</li>
+                    <li class="serve">服务介绍</li>
+                    <li class="about">关于我们</li>
+                    <li>联系方式</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <section class="section-1">
+                <img src="img/首页1.jpg" alt="photo1" class="img-2">
+            </section>
+            
+        </div>
+    </div>
+
+</body>
+<script>
+    var scrollFunc=function(e){undefined
+
+        e=e || window.event;
+        
+        if(e.wheelDelta && event.ctrlKey){//IE/Opera/Chrome
+        
+        event.returnValue=false;
+        
+        }else if(e.detail){//Firefox
+        
+        event.returnValue=false;
+        
+        }
+        
+        }
+        if(document.addEventListener){
+
+document.addEventListener('DOMMouseScroll',scrollFunc,false);
+
+}
+        
+</script>
+
+
+</html>

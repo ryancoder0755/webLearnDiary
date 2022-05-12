@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'abc';
+        let arr = [1,2,3];
+        let obj = {name:'boy',age:11}
+        //1.从构造函数入手obj instanceof Array
+        // console.log(arr instanceof Array)
+        // console.log(str instanceof Array)
+        // console.log(arr instanceof Object) //true
+        //2.从原型入手Array.prototype.isPrototypeOf(obj);
+        // console.log(Array.prototype.isPrototypeOf(arr)) //true
+        //3.Array.isArray()方法
+        // Array.isArray(arr) //true
+        //4.从原型对象判断,__proto__被浏览器禁用时,可以用等效的Object.getProtoypeOf()
+        // console.log(arr.__proto__ == Array.prototype)
+        // console.log(Object.getPrototypeOf(arr)== Array.prototype)
+        // 5.constructor
+        // console.log(arr.constructor === Array)
+        // 6.class属性
+        //class属性,在创建对象时候自带的内部属性,记录了在创建时的引用类型,所以obj1的class=object,obj2的class=Array,obj3的class=Date,不过想要输出class的内部属性，需要调用到顶级原型对象中的tostring,
+        //这个时候需要使用.call() 这个函数可以使对象调用它本身没有的函数
+        // console.log(Object.prototype.toString.call(arr).slice(8,-1) === 'Array')
+    </script>
+</body>
+</html>

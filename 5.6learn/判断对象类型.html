@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n=10,str="hello",b=true,nu=null,un;
+        var foo = function(){};
+        var obj1={},obj2=[1,2,3],obj3=new Date();
+        console.log(
+            typeof(n),//number
+            typeof(str),//string
+            typeof(b),//boolean
+            typeof(nu),//object 
+            typeof(un),//undefined
+            typeof(foo),//function
+            typeof(obj1),//object
+            typeof(obj2),//object
+            typeof(obj3),//object
+        )
+        function checkType(obj){
+            return Object.prototype.toString.call(obj).slice(8,-1)
+        }
+        console.log(checkType(nu));
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let count = 0;
+
+function cc(card) {
+  // 只修改这一行下面的代码
+  if(card > 1 && card < 7){
+    count++
+  }else if(card === 'A' || card === 10 || card === "J" || card === "Q" || card === "K"){
+    count--
+  }
+  let holdBet = 'Bet';
+  if(count < 0){
+    return count +' '+ holdBet;
+  }else{
+    holdBet = 'Hold';
+    return count + " " + holdBet;
+  }
+  return "Change Me";
+  // 只修改这一行上面的代码
+}
+
+cc(2); cc(3); cc(7); cc('K'); cc('A');
+console.log(cc('K'));
+console.log(cc('Q'));
+console.log(cc('K'));
+console.log(cc('Q'));
+console.log(cc('K'));
+</script>
