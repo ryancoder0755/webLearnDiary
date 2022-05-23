@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: turquoise;
+        /* transform:skew(30deg , 10deg); */
+      }
+      #btn {
+        border-radius: 5px;
+        color: white;
+        background-color: #0f5897;
+        padding: 5px 10px 8px 10px;
+      }
+      #btn:hover {
+        animation-name: background-color;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+      }
+      @keyframes background-color {
+        100% {
+          background-color: #4791d0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <button id="btn">Register</button>
+    <script>
+      //     const countArray = [];
+      //   function countdown(n) {
+      //     if (n < 1) {
+      //       return [];
+      //     } else {
+      //       countArray.push(n);
+      //       countdown(n - 1);
+      //       return countArray;
+      //     }
+      //   }
+      // function countDown(n){
+      //     if(n < 1){
+      //         return [];
+      //     }else{
+      //         const arr = countDown(n-1);
+      //         arr.unshift(n);
+      //         return arr;
+      //     }
+      // }
+      //   console.log(countDown(10))
+    //   function rangeOfNumbers(startNum, endNum) {
+    //     if (startNum === endNum) {
+    //       return [startNum];
+    //     } else {
+    //       const arr = rangeOfNumbers(startNum + 1, endNum);
+    //       arr.unshift(startNum);
+    //       return arr;
+    //     }
+    //     return [];
+    //   }
+    //   console.log(rangeOfNumbers(1,6))
+    // var numArr = [];
+    // for(var i=0;i<3;i++){
+    //     numArr.push(i);
+    // }
+    // console.log(numArr);
+    // console.log(i);
+    
+    </script>
+  </body>
+</html>
