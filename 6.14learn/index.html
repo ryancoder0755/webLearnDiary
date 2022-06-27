@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         let soccerWord = "gooooooooal!";
+// let gPhrase = "goouot feeling";
+// let oPhrase = "over the moon";
+// let goRegex = /go*/;
+// console.log(soccerWord.match(goRegex));
+// console.log(gPhrase.match(goRegex));
+// console.log(oPhrase.match(goRegex));
+// let text = "<h1>Winter is coming</h1>";
+// let myRegex = /<.*?>/; // 修改这一行
+// let result = text.match(myRegex);
+// console.log(result)
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+console.log(longHand.test(numbers));
+console.log(shortHand.test(numbers));
+console.log(longHand.test(varNames));
+console.log(shortHand.test(varNames));
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g; // 修改这一行
+let result = quoteSample.match(nonAlphabetRegex).length;
+console.log(result)
+    </script>
+</body>
+</html>

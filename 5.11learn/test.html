@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let person = ()=>{
+    //     let args = arguments; //报错,箭头函数没有arguments,arguments is not defined
+    //     console.log('张三');
+    //     console.log(args); 
+    // }
+// function person2(){
+//     // console.log('张三');
+//     console.log(Object.prototype.toString.call(arguments)); //Arguments
+//     let args = arguments;
+//     console.log(args);
+// }
+// person2(1,2,3,"张飞")
+//         let person =  (...args)=>{
+//             console.log(Object.prototype.toString.call(args)); //Array
+//             console.log(args)
+//         }
+//         person(1,2,3)
+//返回对象字面量
+// let person = ()=>({
+//     name:"李四",
+//     age:24
+// });
+// //相当于es5
+// function person2(){
+//     return {
+//         name:"李四",
+//         age:24
+//     }//加不加()都可以返回
+// }
+// console.log(person2())
+// console.log(person());
+
+//高阶函数
+// function person(){
+//     return function(wrap){
+//         return function(prop){
+//             console.log(wrap,prop)
+//         }
+//     }
+// }
+// let person= ()=>wrap=>prop=>{console.log(wrap,prop)}
+// person()("i am wrap")("i am prop")
+
+    //this指向
+// var name =  "李四" //var才能从window找到
+// let person={
+//     name:"张三",
+//     getName:function(){
+//         console.log(this); 
+//         console.log(this.name);
+//     }
+// }
+// person.getName(); //this指向person,this.name = "张三"
+// // let getName = person.getName; //相当于window.name = person.name,this指向window
+// let getName = person.getName.bind(person); //修改this指向;
+// getName();  //this指向window,this.name = "李四";上面修改后绑定person
+
+//ES5写法
+    // var  person = {
+    //     name:"张三",
+    //     getName:function(){
+    //         _this = this//不采用箭头函数,需保存this指向
+    //         setTimeout(function (){
+    //             console.log(_this);
+    //             console.log(_this.name);
+    //         },300)
+    //     }
+    // }
+    // var getName = person.getName.bind(person);
+    // getName();
+    //ES6箭头函数写法
+    // var person ={
+    //     name:"李四",
+    //     getName:function(){
+    //         setTimeout(()=>{
+    //             console.log(this);
+    //             console.log(this.name);
+    //         },300)
+    //     }
+    // }
+    // let getName = person.getName.bind(person);
+    // getName();
+
+    //Promise
+    //promise的简单用法
+    // let code = 201;
+    // let p1 = new Promise((resolve,reject)=>{
+    // setTimeout(()=>{
+    //     if(code == 200){
+    //         resolve("成功");
+    //     }else{
+    //         reject("失败");
+    //     }
+    // },300)
+    // });
+    // p1.then((res)=>{
+    //     console.log(res);
+    // }).catch((res)=>{
+    //     console.log(res);
+    // })
+
+    //封装Ajax
+    function Request(method,url,data){
+        return new Promise((resovle,reject)=>{
+            
+        })
+    }
+    let url = "";
+    let data = {
+        name:"李荣浩",
+        age:20,
+    }
+    Request("get",url,data);
+    </script>
+</body>
+</html>

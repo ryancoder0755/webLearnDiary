@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue-router.min.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a href="#/good">商品</a>  <br/>
+        <a href="#/world">World</a>
+        <!--当点击不同的超链接，根据地址去匹配对应的组件，然后在此router-view中进行渲染-->
+            <router-view></router-view>  
+    </div>
+
+    <script>
+        //步骤2  创建一个组件
+        const Good = {
+            template:`<div>商品组件内容
+                       <div>图片信息</div>
+                       <div> <router-link :to="{name:'Good_Desc'}">商品规格</router-link>
+                        <router-link :to="{name:'Good_Remark'}">商品评价</router-link>
+                        </div>
+                        <div class="box">
+                            <router-view></router-view>
+                        </div>
+                </div>`
+        }
+
+        const Good_Desc = {
+            template:'<div>商品规格描述</div>'
+        }
+
+        const Good_Remark = {
+            template:'<div>商品评价信息</div>'
+        }
+
+        //步骤3定制路由规则-路由表:创建一个数组对象,对象中定义路由的命名name及path和对应的组件名
+        const routes= [
+            {
+                path:'/good',
+                name:'Good',
+                component:Good,
+                children: [
+                    {
+                        path:'/desc',
+                        name:'Good_Desc',
+                        component:Good_Desc
+                   },
+                   {
+                        path:'remark',
+                        name:'Good_Remark',
+                        component:Good_Remark
+                   },
+               ]
+            }
+        ]
+
+        //步骤 4，创建一个路由器,使用步骤3 中的对象作为参数
+        var router = new VueRouter({
+           routes
+        })
+
+       var vue = new Vue({
+           el: '#app',
+           data: {},
+           router    //步骤5：将创建的router 挂载到vue实例上，router就会接管vue实例中的路由管理
+       })
+    </script>
+</body>
+</html>

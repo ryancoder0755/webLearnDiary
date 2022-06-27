@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// let abc = Object.assign('123');
+// console.log(abc);
+        // let fn = ()=>{
+        //     console.log(arguments);
+        // }
+        // function fn(a,b){
+        //     console.log(arguments[0])//1
+        // }
+        // fn(1,2,3)
+//         let person = {};
+// person['first-name']= '李';
+// person['last-name']= '四';
+// person['ageAttr'] = 20;
+// console.log(person);
+let info = '华宇信息技术有限公司旗下的子公司有: ';
+info = info.concat("北京华宇软件, ","北京华宇信息, ","大连华宇信息, ","北京华宇金信").replace(/\,/g,'').split(' ');
+// console.log(info[0 3])
+for(let i of info){
+    console.log(i)
+}
+// console.log(info)
+// info += "北京华宇软件, ";
+// info += "北京华宇信息, ";
+// info += "大连华宇信息, ";
+// info += "北京华宇金信";
+// console.log(info)
+// info = info.split(", ");
+
+</script>
+</body>
+</html>
